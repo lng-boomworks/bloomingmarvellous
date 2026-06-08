@@ -13,7 +13,7 @@ const steps = [d.steps.one, d.steps.two, d.steps.three, d.steps.four];
 ---
 
 <!-- Editorial hero -->
-<section class="bg-ivory pt-36 pb-16 lg:pt-44 lg:pb-20">
+<section class="pt-36 pb-16 lg:pt-44 lg:pb-20">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <p class="eyebrow mb-4">{d.heroEyebrow}</p>
     <h1>{d.heroHeading}</h1>
@@ -39,18 +39,12 @@ const steps = [d.steps.one, d.steps.two, d.steps.three, d.steps.four];
 </section>
 
 <!-- Areas + map -->
-<section class="bg-cream section">
+<section class="section">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2>{d.areasHeading}</h2>
     <p class="mt-5 text-text-muted text-lg">{d.areasSub}</p>
     <div class="mt-10"><DeliveryAreas variant="chips" /></div>
     <p class="mt-8 text-text-muted italic">{d.areasNote}</p>
-    <div class="mt-12 rounded-2xl overflow-hidden border border-border bg-white">
-      {/* {{MAP_EMBED_URL}} — replace this block with a real Google Maps embed before launch */}
-      <div class="aspect-[16/7] flex items-center justify-center bg-dusty/40 text-botanical/70 text-sm px-4 text-center">
-        {c.shared.mapSoon}
-      </div>
-    </div>
   </div>
 </section>
 

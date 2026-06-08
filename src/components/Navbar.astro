@@ -19,9 +19,9 @@ const homeHref = localizedPath('home', locale);
   class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-transparent"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-    <a href={homeHref} class="flex items-baseline gap-2 shrink-0" aria-label="Blooming Marvellous — home">
-      <span class="script text-3xl text-botanical leading-none">Blooming</span>
-      <span class="font-serif uppercase tracking-[0.25em] text-rose text-sm font-medium">Marvellous</span>
+    <a href={homeHref} class="brand-mark flex items-baseline gap-2 shrink-0" aria-label="Blooming Marvellous - home">
+      <span class="script text-4xl md:text-[44px] text-botanical leading-none">Blooming</span>
+      <span class="font-serif uppercase tracking-[0.28em] text-rose text-base font-semibold">Marvellous</span>
     </a>
 
     <nav class="hidden lg:flex items-center gap-8" aria-label="Primary">
@@ -97,14 +97,7 @@ const homeHref = localizedPath('home', locale);
     const header = document.getElementById('site-header');
     const onScroll = () => {
       if (!header) return;
-      if (window.scrollY > 40) {
-        header.classList.add('bg-cream/95', 'backdrop-blur-md', 'shadow-sm');
-        header.classList.remove('border-transparent');
-        header.classList.add('border-border');
-      } else {
-        header.classList.remove('bg-cream/95', 'backdrop-blur-md', 'shadow-sm', 'border-border');
-        header.classList.add('border-transparent');
-      }
+      header.classList.toggle('nav-solid', window.scrollY > 40);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

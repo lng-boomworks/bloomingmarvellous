@@ -1,4 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect fill="#0d5947" width="32" height="32" rx="6"/>
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#e8f4f0" font-family="Georgia, serif" font-weight="bold" font-size="18">IK</text>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- stem -->
+  <rect x="30.5" y="34" width="3" height="22" rx="1.5" fill="#2F4B45"/>
+  <!-- leaves -->
+  <path d="M32 50 C23 49 16 42 16 33 C25 34 32 40 32 49 Z" fill="#2F4B45"/>
+  <path d="M32 50 C41 49 48 42 48 33 C39 34 32 40 32 49 Z" fill="#39594B"/>
+  <!-- bloom base -->
+  <circle cx="32" cy="24" r="18" fill="#C8102E"/>
+  <!-- outer petal bumps -->
+  <g fill="#D6263F">
+    <circle cx="19" cy="20" r="8"/>
+    <circle cx="45" cy="20" r="8"/>
+    <circle cx="24" cy="11" r="7"/>
+    <circle cx="40" cy="11" r="7"/>
+    <circle cx="32" cy="9"  r="7"/>
+  </g>
+  <!-- inner bloom shading -->
+  <circle cx="32" cy="24" r="12.5" fill="#A50D24"/>
+  <!-- rose swirl -->
+  <path d="M32 24
+           C32 20 37 20 37 25
+           C37 31 28 31 28 23
+           C28 14 41 15 41 26
+           C41 37 23 37 23 24"
+        fill="none" stroke="#E8506A" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- centre highlight -->
+  <circle cx="32" cy="24" r="2.4" fill="#F2D8DD"/>
 </svg>

@@ -1,17 +1,17 @@
 // Invariant business facts for Blooming Marvellous.
-// Translatable copy lives in src/i18n/content.ts — this file is locale-agnostic.
+// Translatable copy lives in src/i18n/content.ts - this file is locale-agnostic.
 
 export const site = {
   brand: 'Blooming Marvellous',
   owner: 'Lorena',
   domain: 'https://bloomingmarvellousflowers.com',
 
-  // Contact — call the mobile, WhatsApp the landline (per brand poster)
-  phoneDisplay: '+34 618 06 39 33',
-  phoneHref: 'tel:+34618063933',
-  whatsappDisplay: '+34 966 84 84 87',
-  whatsappHref: 'https://wa.me/34966848487',
-  email: 'bloomingmarvellouslamarina@gmail.com',
+  // Contact - WhatsApp is the mobile; the landline is the call-only number
+  phoneDisplay: '+34 966 84 84 87',
+  phoneHref: 'tel:+34966848487',
+  whatsappDisplay: '+34 618 06 39 33',
+  whatsappHref: 'https://wa.me/34618063933',
+  email: 'lorena@bloomingmarvellousflowers.com',
 
   address: {
     street: 'Calle Virgen de la Asunción',
@@ -20,21 +20,21 @@ export const site = {
     country: 'Spain',
   },
 
-  // {{MAP_EMBED_URL}} — replace with a real Google Maps embed before launch
+  // {{MAP_EMBED_URL}} - replace with a real Google Maps embed before launch
   mapEmbed: '{{MAP_EMBED_URL}}',
-  // {{OPENING_HOURS}} — pending from owner
+  // {{OPENING_HOURS}} - pending from owner
   openingHours: '{{OPENING_HOURS}}',
 
   social: {
-    // NOTE: verify handles before launch — poster shows @bloomingmarvellous.lamarina
+    // NOTE: verify handles before launch - poster shows @bloomingmarvellous.lamarina
     instagram: 'https://www.instagram.com/blooming_marvellous_florist/',
     facebook: 'https://www.facebook.com/bloomingmarvellouslamarina',
-    pinterest: '{{PINTEREST_URL}}', // {{PINTEREST_URL}} — handle not yet supplied
+    pinterest: '{{PINTEREST_URL}}', // {{PINTEREST_URL}} - handle not yet supplied
     handle: '@bloomingmarvellous.lamarina',
   },
 } as const;
 
-// Free local delivery area (Costa Blanca South). Names are proper nouns — shared across locales.
+// Free local delivery area (Costa Blanca South). Names are proper nouns - shared across locales.
 export const deliveryAreas = [
   'La Marina',
   'San Fulgencio',
@@ -47,7 +47,7 @@ export const deliveryAreas = [
   'Alicante',
 ] as const;
 
-// Occasion ids — labels/blurbs are localised in content.ts. Images are placeholders.
+// Occasion ids - labels/blurbs are localised in content.ts. Images are placeholders.
 export const occasionIds = [
   'weddings',
   'sympathy',
@@ -59,15 +59,15 @@ export const occasionIds = [
 export type OccasionId = (typeof occasionIds)[number];
 
 export const occasionImages: Record<OccasionId, string> = {
-  weddings: '/images/occasions/weddings.jpg',
-  sympathy: '/images/occasions/sympathy.jpg',
-  birthdays: '/images/occasions/birthdays.jpg',
-  anniversaries: '/images/occasions/anniversaries.jpg',
-  celebrations: '/images/occasions/celebrations.jpg',
-  everyday: '/images/occasions/everyday.jpg',
+  weddings: '/images/weddings-events.jpg',
+  sympathy: '/images/sympathy-funerals.jpg',
+  birthdays: '/images/birthdays.jpg',
+  anniversaries: '/images/anniversaries.jpg',
+  celebrations: '/images/mothers-day.jpg',
+  everyday: '/images/everyday-occasions.jpg',
 };
 
-// Real Facebook reviews (verbatim). English quotes kept across locales — they are authentic.
+// Real Facebook reviews (verbatim). English quotes kept across locales - they are authentic.
 // Andrea's quote normalises the brand spelling "Lorena" (review wrote "Lorraine").
 export interface Review {
   quote: string;
@@ -77,7 +77,7 @@ export interface Review {
 
 export const reviews: Record<string, Review> = {
   vivien: {
-    quote: 'Absolutely stunning flowers delivered to me yesterday, thank you so much — they are beautiful x',
+    quote: 'Absolutely stunning flowers delivered to me yesterday, thank you so much - they are beautiful x',
     author: 'Vivien Moore Laing',
     date: 'March 2025',
   },
@@ -102,7 +102,7 @@ export const reviews: Record<string, Review> = {
     date: 'October 2022',
   },
   angie: {
-    quote: 'Ordered this beautiful basket arrangement for my mum for her birthday — what an amazing display it is too! My mum loved them.',
+    quote: 'Ordered this beautiful basket arrangement for my mum for her birthday - what an amazing display it is too! My mum loved them.',
     author: 'Angie Davis',
     date: 'April 2022',
   },

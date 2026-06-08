@@ -6,13 +6,13 @@
 
 @theme inline {
   /* ---- Blooming Marvellous brand palette ---- */
-  --color-rose: #DDA0AC;            /* primary — buttons, key emphasis */
+  --color-rose: #DDA0AC;            /* primary - buttons, key emphasis */
   --color-rose-hover: #C98998;      /* primary hover */
-  --color-botanical: #2F4B45;       /* secondary — nav, footer, anchors */
+  --color-botanical: #2F4B45;       /* secondary - nav, footer, anchors */
   --color-botanical-hover: #233833; /* dark green hover */
   --color-ivory: #FAF7F5;           /* page background */
-  --color-gold: #C9A35F;            /* accent 1 — dividers, hearts, hover */
-  --color-dusty: #F2D8DD;           /* accent 2 — cards, soft blocks */
+  --color-gold: #C9A35F;            /* accent 1 - dividers, hearts, hover */
+  --color-dusty: #F2D8DD;           /* accent 2 - cards, soft blocks */
   --color-charcoal: #2C2C2C;        /* primary text */
   --color-light-grey: #E8E5E3;
   --color-sage: #AEB9AA;
@@ -54,6 +54,30 @@
     font-weight: 300;
   }
 
+  /* Site-wide floral background - fixed, fitted (not zoomed) to the left, with its
+     right edge feathered into ivory and a light veil for readability. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(to right, rgba(250, 247, 245, 0) 0%, rgba(250, 247, 245, 0) 30%, rgba(250, 247, 245, 0.9) 58%, var(--color-ivory) 100%),
+      linear-gradient(rgba(250, 247, 245, 0.22), rgba(250, 247, 245, 0.36)),
+      url("/images/background-floral.png") left center / auto 106% no-repeat,
+      var(--color-ivory);
+  }
+  @media (max-width: 768px) {
+    /* On mobile the florals read as a soft top band fading into ivory */
+    body::before {
+      background:
+        linear-gradient(to bottom, rgba(250, 247, 245, 0.28) 0%, rgba(250, 247, 245, 0.74) 56%, var(--color-ivory) 100%),
+        url("/images/background-floral.png") center top / 150% auto no-repeat,
+        var(--color-ivory);
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-medium tracking-tight text-botanical;
   }
@@ -88,12 +112,43 @@
 }
 
 @layer components {
-  /* Allura script flourish — used sparingly for words like "Blooming" / "that matter" */
+  /* Allura script flourish - used sparingly for words like "Blooming" / "that matter" */
   .script {
     font-family: var(--font-script);
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 1;
+  }
+
+  /* Navbar brand - soft cream halo so it pops over the florals when the nav is
+     transparent; invisible once the nav turns solid white on scroll. */
+  .brand-mark span {
+    text-shadow: 0 1px 12px rgba(255, 253, 252, 0.95), 0 0 3px rgba(255, 253, 252, 0.85);
+  }
+
+  /* Scrolled navbar: transparent on the left (florals + logo show through),
+     solid cream under the nav links on the right. */
+  .nav-solid {
+    background: linear-gradient(
+      to right,
+      rgba(255, 253, 252, 0) 0%,
+      rgba(255, 253, 252, 0) 14%,
+      rgba(255, 253, 252, 0.97) 34%,
+      rgba(255, 253, 252, 0.97) 100%
+    );
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+  }
+  @media (max-width: 1023px) {
+    /* Mobile/tablet: keep a fuller wash so the hamburger + logo stay legible */
+    .nav-solid {
+      background: linear-gradient(
+        to right,
+        rgba(255, 253, 252, 0) 0%,
+        rgba(255, 253, 252, 0) 10%,
+        rgba(255, 253, 252, 0.97) 30%,
+        rgba(255, 253, 252, 0.97) 100%
+      );
+    }
   }
 
   /* Eyebrow label above section headings */

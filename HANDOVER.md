@@ -44,17 +44,17 @@ Trilingual. English at root, Spanish under `/es/`, German under `/de/`. Nav orde
 ## 5. Content used
 - Real verbatim Facebook testimonials (Vivien, Katie, Linda, Martin, Elise, Angie, Andrea).
 - Hero tagline lifted verbatim from the brand poster: *"Beautiful flowers. Made for moments that matter."*
-- Contact: WhatsApp `+34 966 84 84 87` (`wa.me/34966848487`), call `+34 618 06 39 33`, email `bloomingmarvellouslamarina@gmail.com`.
+- Contact: WhatsApp is the mobile `+34 618 06 39 33` (`wa.me/34618063933`); the landline `+34 966 84 84 87` is call-only. Email `lorena@bloomingmarvellousflowers.com`.
 
 ## 6. Outstanding placeholder tokens / pending content
 | Item | Where | Status |
 |------|-------|--------|
-| **Real photography** | `public/images/` (hero, featured, about, occasions/*, gallery/*) | Placeholders: floral crops of the brand poster + soft brand-tint tiles. Replace with real photos (Instagram shots work). |
-| **Opening hours** | Delivery + Contact (`shared.hoursTBC`) | Shows "Please get in touch for our latest opening hours." — supply real hours. |
-| **Map embed** | Delivery + Contact (`{{MAP_EMBED_URL}}`) | Friendly "map coming soon" placeholder. Drop in a Google Maps embed. |
-| **Contact form backend** | `ContactBody.astro` | Currently a functional `mailto:` fallback to the Gmail. Recommended: swap for Formspree/Web3Forms. |
-| **Pinterest URL** | `src/data/site.ts` (`{{PINTEREST_URL}}`) | Icon hidden until a real URL is set. Confirm Instagram + Pinterest handles too (poster shows `@bloomingmarvellous.lamarina`; current IG link uses `blooming_marvellous_florist`). |
-| **Favicons / OG image** | `public/` | Starter favicons still in place; `og-default.jpg` is a poster crop. Replace with brand favicon + a proper OG image. |
+| **Real photography** | DONE for Flowers/Home/About (real occasion, our-work, meet-lorena images). Only `public/images/og-default.jpg` (social-share) is still a poster crop. | Optional: replace OG image with a real photo. |
+| **Opening hours** | Delivery + Contact (`shared.hoursTBC`) | Shows "Please get in touch for our latest opening hours." - supply real hours. |
+| **Map embed** | REMOVED at client request from Delivery + Contact. | Re-add a Google Maps embed later if wanted. |
+| **Contact form backend** | `ContactBody.astro` | Functional `mailto:` to `lorena@bloomingmarvellousflowers.com`. Recommended: swap for Formspree/Web3Forms. |
+| **Pinterest URL** | `src/data/site.ts` (`{{PINTEREST_URL}}`) | Icon hidden until a real URL is set. Instagram link removed from footer at client request. |
+| **OG image** | `public/images/og-default.jpg` | Poster crop. Replace with a real photo for nicer social-share cards. Favicon is now a custom red rose. |
 
 ## 7. Important content notes
 - **Florist's name = Lorena** (per the brand poster). Andrea Quintero's review (which wrote "Lorraine")

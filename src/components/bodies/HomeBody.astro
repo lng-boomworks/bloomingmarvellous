@@ -20,36 +20,31 @@ const homeReviews = [reviews.vivien, reviews.martin, reviews.elise];
 const andrea = reviews.andrea;
 ---
 
-<!-- Hero -->
-<section class="relative grid lg:grid-cols-2 min-h-[94vh]">
-  <div class="relative order-2 lg:order-1 min-h-[45vh] lg:min-h-full">
-    <img src={withBase('/images/hero.jpg')} alt="A lush bouquet of peonies, roses and tulips with eucalyptus" class="absolute inset-0 w-full h-full object-cover" />
-  </div>
-  <div class="order-1 lg:order-2 flex items-center justify-center bg-ivory px-6 py-28 lg:py-0">
-    <div class="max-w-xl text-center">
-      <LogoLockup size="lg" />
-      <div class="mt-8 space-y-1">
-        <p class="font-serif font-medium uppercase tracking-wide text-charcoal text-3xl md:text-4xl">{h.heroLine1}</p>
-        <p class="font-serif font-medium uppercase tracking-wide text-rose text-3xl md:text-4xl">{h.heroLine2}</p>
-        <p class="script text-rose text-5xl md:text-6xl">{h.heroLine3Script}</p>
-      </div>
-      <p class="mt-7 text-text-muted text-lg leading-relaxed max-w-md mx-auto">{h.heroSub}</p>
-      <div class="flex flex-wrap gap-4 justify-center mt-9">
-        <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-rose text-white font-medium hover:bg-rose-hover transition-colors shadow-sm">
-          {c.shared.orderWhatsapp}
-        </a>
-        <a href={flowersHref}
-           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border border-rose text-rose font-medium hover:bg-rose hover:text-white transition-colors">
-          {c.shared.seeFlowers}
-        </a>
-      </div>
+<!-- Hero - centered over the floral page background -->
+<section class="relative min-h-screen flex items-center justify-center px-6 py-32 text-center">
+  <div class="max-w-2xl">
+    <LogoLockup size="lg" />
+    <div class="mt-8 space-y-1">
+      <p class="font-serif font-medium uppercase tracking-wide text-charcoal text-3xl md:text-4xl">{h.heroLine1}</p>
+      <p class="font-serif font-medium uppercase tracking-wide text-rose text-3xl md:text-4xl">{h.heroLine2}</p>
+      <p class="script text-rose text-5xl md:text-6xl">{h.heroLine3Script}</p>
+    </div>
+    <p class="mt-7 text-text-muted text-lg leading-relaxed max-w-md mx-auto">{h.heroSub}</p>
+    <div class="flex flex-wrap gap-4 justify-center mt-9">
+      <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-rose text-white font-medium hover:bg-rose-hover transition-colors shadow-sm">
+        {c.shared.orderWhatsapp}
+      </a>
+      <a href={flowersHref}
+         class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md border border-rose text-rose font-medium hover:bg-rose hover:text-white transition-colors">
+        {c.shared.seeFlowers}
+      </a>
     </div>
   </div>
 </section>
 
 <!-- Value props -->
-<section class="bg-cream section">
+<section class="section">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <ValueProps locale={locale} />
   </div>
@@ -66,7 +61,7 @@ const andrea = reviews.andrea;
 </section>
 
 <!-- Occasions -->
-<section class="bg-dusty/30 section">
+<section class="section">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
       <p class="eyebrow mb-4">{h.occasionsEyebrow}</p>
@@ -94,17 +89,17 @@ const andrea = reviews.andrea;
       <p class="mt-6 text-text-muted text-lg leading-relaxed">{h.featuredBody}</p>
       <blockquote class="mt-8 border-l-2 border-gold pl-6 font-serif italic text-xl text-botanical leading-relaxed">
         “{andrea.quote}”
-        <cite class="block not-italic font-sans text-sm text-text-muted mt-3">— {andrea.author}</cite>
+        <cite class="block not-italic font-sans text-sm text-text-muted mt-3">- {andrea.author}</cite>
       </blockquote>
     </div>
     <div class="order-1 lg:order-2">
-      <img src={withBase('/images/featured.jpg')} alt="A bespoke hand-made floral arrangement" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
+      <img src={withBase('/images/our-work-1.jpg')} alt="A bespoke sympathy tribute hand-made by Lorena in West Ham colours" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
     </div>
   </div>
 </section>
 
 <!-- Delivery promise -->
-<section class="bg-cream section">
+<section class="section">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <p class="eyebrow mb-4">{h.deliveryEyebrow}</p>
     <h2>{h.deliveryHeading}</h2>

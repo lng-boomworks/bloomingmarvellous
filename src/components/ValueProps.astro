@@ -1,7 +1,7 @@
 ---
 import { useContent } from '../i18n/content';
 import type { Locale } from '../i18n/ui';
-// The four poster value props in a row of circular blush icon badges.
+// The four poster value props in a row of large circular icon badges.
 interface Props {
   locale: Locale;
 }
@@ -15,32 +15,45 @@ const items = [
   { key: 'occasion', title: t.occasion.title },
 ];
 ---
-<ul class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+<ul class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
   {items.map((item) => (
-    <li class="flex flex-col items-center text-center gap-3">
-      <span class="flex items-center justify-center w-16 h-16 rounded-full bg-dusty/60 border border-rose/40 text-botanical">
+    <li class="group flex flex-col items-center text-center gap-4">
+      <span class="flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-b from-dusty/70 to-cream ring-1 ring-rose/30 shadow-[0_8px_24px_rgba(221,160,172,0.28)] text-botanical transition-transform duration-300 group-hover:-translate-y-1">
         {item.key === 'fresh' && (
-          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 13v8" /><path d="M12 13c-2.5 0-4-1.8-4-4 2.5 0 4 1.8 4 4z" /><path d="M12 13c2.5 0 4-1.8 4-4-2.5 0-4 1.8-4 4z" /><path d="M12 9c0-2.2 1.5-4 3.5-4 0 2.2-1.5 4-3.5 4z" /><path d="M12 9c0-2.2-1.5-4-3.5-4 0 2.2 1.5 4 3.5 4z" /><path d="M8 21h8" />
+          <svg viewBox="0 0 48 48" class="w-11 h-11 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 26v18" />
+            <path d="M24 41c-7 0-11-4-11-11 7 0 11 4 11 11z" />
+            <path d="M24 37c5.5 0 9-3 9-9-6 0-9 3-9 9z" />
+            <circle cx="24" cy="15" r="9.5" />
+            <path d="M19 15a5 5 0 0 1 10 0" />
+            <path d="M21.5 17.5a2.5 2.5 0 0 0 5 0" />
           </svg>
         )}
         {item.key === 'personal' && (
-          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.5 12 20 12 20z" />
+          <svg viewBox="0 0 48 48" class="w-11 h-11 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 41s-13.5-8.4-13.5-18.4A7.5 7.5 0 0 1 24 18a7.5 7.5 0 0 1 13.5 4.6C37.5 32.6 24 41 24 41z" />
+            <path d="M30 9.5l1.3 2.7 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4z" />
           </svg>
         )}
         {item.key === 'delivery' && (
-          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 7h11v8H3z" /><path d="M14 9h4l3 3v3h-7z" /><circle cx="7" cy="17" r="1.6" /><circle cx="17" cy="17" r="1.6" />
+          <svg viewBox="0 0 48 48" class="w-11 h-11 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="15" width="19" height="16" rx="2.5" />
+            <path d="M29 20h5.5l4.5 5v6H29z" />
+            <circle cx="17" cy="34" r="3.2" />
+            <circle cx="33" cy="34" r="3.2" />
+            <path d="M4 21h5M3 26h4" />
           </svg>
         )}
         {item.key === 'occasion' && (
-          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 9h16v11H4z" /><path d="M4 9l1.5-4h13L20 9" /><path d="M12 5v15" />
+          <svg viewBox="0 0 48 48" class="w-11 h-11 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="11" y="22" width="26" height="17" rx="2" />
+            <rect x="9" y="16" width="30" height="6" rx="1.5" />
+            <path d="M24 16V39" />
+            <path d="M24 16c-4.5 0-8-1.8-8-4.5S20 8 24 16c4-8 8-7 8-4.5S28.5 16 24 16z" />
           </svg>
         )}
       </span>
-      <span class="font-sans text-sm font-medium text-botanical leading-snug max-w-[140px]">{item.title}</span>
+      <span class="font-sans text-base font-medium text-botanical leading-snug max-w-[150px]">{item.title}</span>
     </li>
   ))}
 </ul>

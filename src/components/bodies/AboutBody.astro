@@ -16,7 +16,7 @@ const values = [a.values.bespoke, a.values.fresh, a.values.personal, a.values.lo
 ---
 
 <!-- Editorial hero -->
-<section class="bg-ivory pt-36 pb-16 lg:pt-44 lg:pb-20">
+<section class="pt-36 pb-16 lg:pt-44 lg:pb-20">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <p class="eyebrow mb-4">{a.heroEyebrow}</p>
     <h1>{a.heroHeading}</h1>
@@ -28,7 +28,7 @@ const values = [a.values.bespoke, a.values.fresh, a.values.personal, a.values.lo
 <section class="section pt-0">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
     <div>
-      <img src={withBase('/images/about-lorena.jpg')} alt="Lorena, florist at Blooming Marvellous, arranging flowers" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
+      <img src={withBase('/images/meet-lorena.jpg')} alt="Lorena, florist at Blooming Marvellous, in her shop with a bouquet" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
     </div>
     <div>
       <h2>{a.storyHeading}</h2>
@@ -40,7 +40,7 @@ const values = [a.values.bespoke, a.values.fresh, a.values.personal, a.values.lo
 </section>
 
 <!-- Values -->
-<section class="bg-cream section">
+<section class="section">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
       <h2>{a.valuesHeading}</h2>
@@ -57,11 +57,11 @@ const values = [a.values.bespoke, a.values.fresh, a.values.personal, a.values.lo
   </div>
 </section>
 
-<!-- Banner -->
-<section class="relative">
-  <img src={withBase('/images/about-banner.jpg')} alt="Fresh seasonal flowers at Blooming Marvellous" class="w-full h-[40vh] object-cover" />
-  <div class="absolute inset-0 bg-botanical/40 flex items-center justify-center">
-    <p class="script text-cream text-4xl md:text-5xl text-center px-6">{a.bannerCaption}</p>
+<!-- Banner - transparent so the floral page background shows through -->
+<section class="section">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="script text-rose text-5xl md:text-6xl leading-tight">{a.bannerCaption}</p>
+    <Sprig class="mt-8" />
   </div>
 </section>
 
