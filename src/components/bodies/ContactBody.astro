@@ -1,7 +1,7 @@
 ---
 import { type Locale } from '../../i18n/ui';
 import { useContent } from '../../i18n/content';
-import { site, occasionIds } from '../../data/site';
+import { site } from '../../data/site';
 import Sprig from '../Sprig.astro';
 
 interface Props { locale: Locale }
@@ -48,54 +48,21 @@ const methods = [
   </div>
 </section>
 
-<!-- Details + form -->
+<!-- Find us -->
 <section class="section pt-0">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
-    <!-- Find us -->
-    <div>
-      <h2>{ct.detailsHeading}</h2>
-      <Sprig class="mt-6 !justify-start" />
-      <dl class="mt-8 space-y-6 text-[15px]">
-        <div>
-          <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.addressLabel}</dt>
-          <dd class="text-text-muted leading-relaxed">{site.address.street}<br />{site.address.area}<br />{site.address.region}, {site.address.country}</dd>
-        </div>
-        <div>
-          <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.hoursLabel}</dt>
-          <dd class="text-text-muted">{c.shared.hoursTBC}</dd>
-        </div>
-      </dl>
-    </div>
-
-    <!-- Form -->
-    <div>
-      <h2>{ct.formHeading}</h2>
-      {/* Functional mailto fallback. Recommended: swap action for a Formspree/Web3Forms endpoint before launch. */}
-      <form action={`mailto:${site.email}`} method="POST" enctype="text/plain" class="mt-8 space-y-5">
-        <div>
-          <label for="name" class="block text-sm font-medium text-botanical mb-2">{ct.form.name}</label>
-          <input id="name" name="name" type="text" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none" />
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-medium text-botanical mb-2">{ct.form.email}</label>
-          <input id="email" name="email" type="email" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none" />
-        </div>
-        <div>
-          <label for="occasion" class="block text-sm font-medium text-botanical mb-2">{ct.form.occasion}</label>
-          <select id="occasion" name="occasion" class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none">
-            <option value="">{ct.form.occasionDefault}</option>
-            {occasionIds.map((id) => <option value={id}>{c.occasions[id].title}</option>)}
-          </select>
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-medium text-botanical mb-2">{ct.form.message}</label>
-          <textarea id="message" name="message" rows="5" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none resize-y"></textarea>
-        </div>
-        <button type="submit" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-rose text-white font-medium hover:bg-rose-hover transition-colors shadow-sm">
-          {ct.form.submit}
-        </button>
-      </form>
-      <p class="mt-6 text-text-muted text-sm leading-relaxed">{ct.finalNote}</p>
-    </div>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2>{ct.detailsHeading}</h2>
+    <Sprig class="mt-6" />
+    <dl class="mt-8 space-y-6 text-[15px]">
+      <div>
+        <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.addressLabel}</dt>
+        <dd class="text-text-muted leading-relaxed">{site.address.street}<br />{site.address.area}<br />{site.address.region}, {site.address.country}</dd>
+      </div>
+      <div>
+        <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.hoursLabel}</dt>
+        <dd class="text-text-muted">{c.shared.hoursTBC}</dd>
+      </div>
+    </dl>
+    <p class="mt-10 text-text-muted leading-relaxed">{ct.finalNote}</p>
   </div>
 </section>
