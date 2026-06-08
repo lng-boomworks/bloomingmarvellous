@@ -52,7 +52,14 @@ const steps = [d.steps.one, d.steps.two, d.steps.three, d.steps.four];
 <section class="section">
   <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2>{d.hoursHeading}</h2>
-    <p class="mt-6 text-text-muted text-lg">{c.shared.hoursTBC}</p>
+    <dl class="mt-8 max-w-md mx-auto text-left divide-y divide-border">
+      {c.shared.hours.map((row) => (
+        <div class="flex items-center justify-between gap-6 py-3">
+          <dt class="text-botanical font-medium">{row.days}</dt>
+          <dd class="text-text-muted whitespace-nowrap">{row.time}</dd>
+        </div>
+      ))}
+    </dl>
   </div>
 </section>
 

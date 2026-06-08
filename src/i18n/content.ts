@@ -42,6 +42,11 @@ const en = {
     freeDeliveryShort: 'Free local delivery',
     hoursTBC: 'Please get in touch for our latest opening hours.',
     mapSoon: 'Find us in Urbanización Oasis, La Marina - map coming soon.',
+    hours: [
+      { days: 'Monday, Wednesday & Friday', time: '10:00 - 16:00' },
+      { days: 'Tuesday, Thursday & Saturday', time: '10:00 - 13:00' },
+      { days: 'Sunday', time: 'Closed' },
+    ],
   },
 
   occasions: {
@@ -218,6 +223,11 @@ const es: typeof en = {
     freeDeliveryShort: 'Entrega local gratuita',
     hoursTBC: 'Contáctanos para conocer nuestro horario actual.',
     mapSoon: 'Encuéntranos en Urbanización Oasis, La Marina - mapa próximamente.',
+    hours: [
+      { days: 'Lunes, miércoles y viernes', time: '10:00 - 16:00' },
+      { days: 'Martes, jueves y sábado', time: '10:00 - 13:00' },
+      { days: 'Domingo', time: 'Cerrado' },
+    ],
   },
 
   occasions: {
@@ -394,6 +404,11 @@ const de: typeof en = {
     freeDeliveryShort: 'Kostenlose lokale Lieferung',
     hoursTBC: 'Bitte kontaktieren Sie uns für unsere aktuellen Öffnungszeiten.',
     mapSoon: 'Sie finden uns in der Urbanización Oasis, La Marina - Karte folgt in Kürze.',
+    hours: [
+      { days: 'Montag, Mittwoch & Freitag', time: '10:00 - 16:00' },
+      { days: 'Dienstag, Donnerstag & Samstag', time: '10:00 - 13:00' },
+      { days: 'Sonntag', time: 'Geschlossen' },
+    ],
   },
 
   occasions: {

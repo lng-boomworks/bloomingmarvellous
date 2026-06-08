@@ -60,7 +60,11 @@ const methods = [
       </div>
       <div>
         <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.hoursLabel}</dt>
-        <dd class="text-text-muted">{c.shared.hoursTBC}</dd>
+        <dd class="text-text-muted space-y-0.5">
+          {c.shared.hours.map((row) => (
+            <span class="block">{row.days}: {row.time}</span>
+          ))}
+        </dd>
       </div>
     </dl>
     <p class="mt-10 text-text-muted leading-relaxed">{ct.finalNote}</p>

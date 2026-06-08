@@ -50,7 +50,7 @@ Trilingual. English at root, Spanish under `/es/`, German under `/de/`. Nav orde
 | Item | Where | Status |
 |------|-------|--------|
 | **Real photography** | DONE for Flowers/Home/About (real occasion, our-work, meet-lorena images). Only `public/images/og-default.jpg` (social-share) is still a poster crop. | Optional: replace OG image with a real photo. |
-| **Opening hours** | Delivery + Contact (`shared.hoursTBC`) | Shows "Please get in touch for our latest opening hours." - supply real hours. |
+| **Opening hours** | DONE - real hours set in `shared.hours` (Mon/Wed/Fri 10-16, Tue/Thu/Sat 10-13, Sun closed), shown on Delivery + Contact in all locales. | - |
 | **Map embed** | REMOVED at client request from Delivery + Contact. | Re-add a Google Maps embed later if wanted. |
 | **Contact form backend** | `ContactBody.astro` | Functional `mailto:` to `lorena@bloomingmarvellousflowers.com`. Recommended: swap for Formspree/Web3Forms. |
 | **Pinterest URL** | `src/data/site.ts` (`{{PINTEREST_URL}}`) | Icon hidden until a real URL is set. Instagram link removed from footer at client request. |
