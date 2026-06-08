@@ -1,0 +1,80 @@
+---
+import { withBase } from '../../utils/url';
+import { type Locale } from '../../i18n/ui';
+import { useContent } from '../../i18n/content';
+import { reviews } from '../../data/site';
+import Sprig from '../Sprig.astro';
+import Testimonial from '../Testimonial.astro';
+import CTABand from '../CTABand.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = useContent(locale);
+const a = c.about;
+const aboutReviews = [reviews.katie, reviews.linda, reviews.angie];
+const values = [a.values.bespoke, a.values.fresh, a.values.personal, a.values.local];
+---
+
+<!-- Editorial hero -->
+<section class="bg-ivory pt-36 pb-16 lg:pt-44 lg:pb-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="eyebrow mb-4">{a.heroEyebrow}</p>
+    <h1>{a.heroHeading}</h1>
+    <p class="mt-5 text-text-muted text-xl">{a.heroSub}</p>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="section pt-0">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div>
+      <img src={withBase('/images/about-lorena.jpg')} alt="Lorena, florist at Blooming Marvellous, arranging flowers" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
+    </div>
+    <div>
+      <h2>{a.storyHeading}</h2>
+      <div class="mt-6 space-y-5 text-text-muted text-lg leading-relaxed">
+        {a.storyBody.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="bg-cream section">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2>{a.valuesHeading}</h2>
+      <Sprig class="mt-8" />
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {values.map((v) => (
+        <div class="text-center">
+          <h3 class="font-serif text-2xl text-rose">{v.title}</h3>
+          <p class="mt-3 text-text-muted text-[15px] leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Banner -->
+<section class="relative">
+  <img src={withBase('/images/about-banner.jpg')} alt="Fresh seasonal flowers at Blooming Marvellous" class="w-full h-[40vh] object-cover" />
+  <div class="absolute inset-0 bg-botanical/40 flex items-center justify-center">
+    <p class="script text-cream text-4xl md:text-5xl text-center px-6">{a.bannerCaption}</p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2>{a.testimonialsHeading}</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {aboutReviews.map((r) => <Testimonial quote={r.quote} author={r.author} date={r.date} />)}
+    </div>
+  </div>
+</section>
+
+<CTABand locale={locale} heading={a.finalHeading} sub={a.finalSub} />

@@ -1,0 +1,23 @@
+---
+// Quote card for the testimonials band — real Facebook reviews.
+interface Props {
+  quote: string;
+  author: string;
+  date: string;
+}
+const { quote, author, date } = Astro.props;
+---
+<figure class="bg-card rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex flex-col h-full">
+  <div class="flex gap-1 text-gold mb-4" aria-hidden="true">
+    {Array.from({ length: 5 }).map(() => (
+      <svg viewBox="0 0 20 20" class="w-4 h-4" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 15.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z" /></svg>
+    ))}
+  </div>
+  <blockquote class="font-serif text-xl italic text-botanical leading-relaxed flex-1">
+    “{quote}”
+  </blockquote>
+  <figcaption class="mt-6 pt-4 border-t border-border">
+    <span class="block font-sans font-medium text-charcoal text-sm">{author}</span>
+    <span class="block text-text-muted text-xs mt-0.5">{date}</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,70 @@
+---
+import { withBase } from '../../utils/url';
+import { type Locale } from '../../i18n/ui';
+import { useContent } from '../../i18n/content';
+import { occasionIds, occasionImages } from '../../data/site';
+import OccasionCard from '../OccasionCard.astro';
+import Sprig from '../Sprig.astro';
+import CTABand from '../CTABand.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = useContent(locale);
+const f = c.flowers;
+const gallery = [1, 2, 3, 4, 5, 6];
+---
+
+<!-- Editorial hero -->
+<section class="bg-ivory pt-36 pb-16 lg:pt-44 lg:pb-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="eyebrow mb-4">{f.heroEyebrow}</p>
+    <h1>{f.heroHeading}</h1>
+    <p class="mt-6 text-text-muted text-lg leading-relaxed">{f.heroSub}</p>
+    <Sprig class="mt-10" />
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="section pt-0">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2>{f.introHeading}</h2>
+    <p class="mt-6 text-text-muted text-lg leading-relaxed">{f.introBody}</p>
+  </div>
+</section>
+
+<!-- Occasions -->
+<section class="bg-dusty/30 section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2>{f.occasionsHeading}</h2>
+      <p class="mt-5 text-text-muted text-lg leading-relaxed">{f.occasionsSub}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {occasionIds.map((id) => (
+        <OccasionCard image={occasionImages[id]} title={c.occasions[id].title} blurb={c.occasions[id].blurb} alt={c.occasions[id].title} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2>{f.galleryHeading}</h2>
+      <p class="mt-5 text-text-muted text-lg leading-relaxed">{f.gallerySub}</p>
+    </div>
+    <div class="columns-2 md:columns-3 gap-5 [&>*]:mb-5">
+      {gallery.map((n) => (
+        <img
+          src={withBase(`/images/gallery/g${n}.jpg`)}
+          alt="A Blooming Marvellous floral arrangement"
+          loading="lazy"
+          class={`w-full rounded-2xl object-cover ${n % 2 === 0 ? 'aspect-[3/4]' : 'aspect-square'}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<CTABand locale={locale} heading={f.ctaHeading} sub={f.ctaSub} />

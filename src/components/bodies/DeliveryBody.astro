@@ -1,0 +1,65 @@
+---
+import { type Locale } from '../../i18n/ui';
+import { useContent } from '../../i18n/content';
+import DeliveryAreas from '../DeliveryAreas.astro';
+import Sprig from '../Sprig.astro';
+import CTABand from '../CTABand.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = useContent(locale);
+const d = c.delivery;
+const steps = [d.steps.one, d.steps.two, d.steps.three, d.steps.four];
+---
+
+<!-- Editorial hero -->
+<section class="bg-ivory pt-36 pb-16 lg:pt-44 lg:pb-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="eyebrow mb-4">{d.heroEyebrow}</p>
+    <h1>{d.heroHeading}</h1>
+    <p class="mt-6 text-text-muted text-lg leading-relaxed">{d.heroSub}</p>
+    <Sprig class="mt-10" />
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="section pt-0">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14"><h2>{d.stepsHeading}</h2></div>
+    <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, i) => (
+        <li class="bg-card rounded-2xl p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex flex-col">
+          <span class="flex items-center justify-center w-11 h-11 rounded-full bg-rose text-white font-serif text-xl mb-5">{i + 1}</span>
+          <h3 class="font-serif text-xl text-botanical">{step.title}</h3>
+          <p class="mt-2 text-text-muted text-[15px] leading-relaxed">{step.desc}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- Areas + map -->
+<section class="bg-cream section">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2>{d.areasHeading}</h2>
+    <p class="mt-5 text-text-muted text-lg">{d.areasSub}</p>
+    <div class="mt-10"><DeliveryAreas variant="chips" /></div>
+    <p class="mt-8 text-text-muted italic">{d.areasNote}</p>
+    <div class="mt-12 rounded-2xl overflow-hidden border border-border bg-white">
+      {/* {{MAP_EMBED_URL}} — replace this block with a real Google Maps embed before launch */}
+      <div class="aspect-[16/7] flex items-center justify-center bg-dusty/40 text-botanical/70 text-sm px-4 text-center">
+        {c.shared.mapSoon}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hours -->
+<section class="section">
+  <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2>{d.hoursHeading}</h2>
+    <p class="mt-6 text-text-muted text-lg">{c.shared.hoursTBC}</p>
+  </div>
+</section>
+
+<CTABand locale={locale} heading={d.finalHeading} sub={d.finalSub} />

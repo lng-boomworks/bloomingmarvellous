@@ -1,0 +1,38 @@
+---
+// The Blooming Marvellous brand mark from the poster:
+// script "Blooming" + serif-caps "MARVELLOUS" + gold-heart rule + "by Lorena".
+interface Props {
+  variant?: 'dark' | 'light'; // 'dark' = for light backgrounds; 'light' = for the green footer
+  size?: 'sm' | 'md' | 'lg';
+  byline?: boolean;
+  class?: string;
+}
+const { variant = 'dark', size = 'md', byline = true, class: className = '' } = Astro.props;
+
+const bloomingColor = variant === 'light' ? 'text-cream' : 'text-botanical';
+const bylineColor = variant === 'light' ? 'text-cream/70' : 'text-text-muted';
+
+const sizes = {
+  sm: { blooming: 'text-3xl', marvellous: 'text-lg', tracking: 'tracking-[0.3em]', byline: 'text-[10px]' },
+  md: { blooming: 'text-5xl', marvellous: 'text-2xl', tracking: 'tracking-[0.35em]', byline: 'text-xs' },
+  lg: { blooming: 'text-6xl md:text-7xl', marvellous: 'text-4xl md:text-5xl', tracking: 'tracking-[0.4em]', byline: 'text-sm' },
+};
+const s = sizes[size];
+---
+
+<div class={`flex flex-col items-center text-center leading-none ${className}`}>
+  <span class={`script ${s.blooming} ${bloomingColor} -mb-2`}>Blooming</span>
+  <span class={`font-serif font-medium uppercase text-rose ${s.marvellous} ${s.tracking} pl-[0.35em]`}>
+    Marvellous
+  </span>
+  <div class="flex items-center gap-2 mt-2 w-full max-w-[180px]">
+    <span class="h-px flex-1 bg-gold/60"></span>
+    <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 text-gold" fill="currentColor" aria-hidden="true">
+      <path d="M12 21s-6.7-4.4-9.3-8.1C.9 10.3 1.6 7 4.3 5.9c1.9-.8 3.9 0 4.9 1.6L12 11l2.8-3.5c1-1.6 3-2.4 4.9-1.6 2.7 1.1 3.4 4.4 1.6 7C18.7 16.6 12 21 12 21z" />
+    </svg>
+    <span class="h-px flex-1 bg-gold/60"></span>
+  </div>
+  {byline && (
+    <span class={`font-sans uppercase ${s.byline} ${bylineColor} tracking-[0.3em] mt-2`}>by Lorena</span>
+  )}
+</div>

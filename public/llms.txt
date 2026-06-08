@@ -1,21 +1,26 @@
-# Your Business Name
+# Blooming Marvellous
 
-> Your business tagline.
+> Bespoke flowers for the moments that matter — hand-made on the Costa Blanca, delivered free locally.
 
-Description of your business and what you do.
+Blooming Marvellous is a boutique florist run by Lorena in Urbanización Oasis, La Marina (Alicante, Costa Blanca South, Spain). Every arrangement is made by hand for the occasion, with free local delivery and same-day delivery for local orders. The site is available in English, Spanish and German.
 
-## Services
-- Service One
-- Service Two
-- Service Three
+## Flowers for all occasions
+- Weddings & Events
+- Sympathy & Funerals
+- Birthdays
+- Anniversaries
+- Mother's Day & Celebrations
+- Everyday Bouquets
 
 ## Contact
-- Phone: 01234 567890
-- Email: hello@example.com
-- Address: Your Town, County, Postcode
+- WhatsApp: +34 966 84 84 87
+- Phone: +34 618 06 39 33
+- Email: bloomingmarvellouslamarina@gmail.com
+- Address: Calle Virgen de la Asunción, Urbanización Oasis, La Marina, Alicante, Spain
 
 ## Key pages
-- Home: https://example.com/
-- Services: https://example.com/services
-- About: https://example.com/about
-- Contact: https://example.com/contact
+- Home: https://bloomingmarvellousflowers.com/
+- Our Flowers: https://bloomingmarvellousflowers.com/flowers
+- About: https://bloomingmarvellousflowers.com/about
+- Delivery: https://bloomingmarvellousflowers.com/delivery
+- Contact: https://bloomingmarvellousflowers.com/contact

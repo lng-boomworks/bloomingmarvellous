@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import FlowersBody from '../../components/bodies/FlowersBody.astro';
+import { useContent } from '../../i18n/content';
+const locale = 'es' as const;
+const meta = useContent(locale).meta.flowers;
+---
+<Base title={meta.title} description={meta.description} locale={locale} routeKey="flowers">
+  <FlowersBody locale={locale} />
+</Base>

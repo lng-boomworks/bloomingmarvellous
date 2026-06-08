@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import AboutBody from '../../components/bodies/AboutBody.astro';
+import { useContent } from '../../i18n/content';
+const locale = 'es' as const;
+const meta = useContent(locale).meta.about;
+---
+<Base title={meta.title} description={meta.description} locale={locale} routeKey="about">
+  <AboutBody locale={locale} />
+</Base>

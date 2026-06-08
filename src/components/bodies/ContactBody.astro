@@ -1,0 +1,107 @@
+---
+import { type Locale } from '../../i18n/ui';
+import { useContent } from '../../i18n/content';
+import { site, occasionIds } from '../../data/site';
+import Sprig from '../Sprig.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = useContent(locale);
+const ct = c.contact;
+
+const methods = [
+  { label: ct.whatsappLabel, value: site.whatsappDisplay, href: site.whatsappHref, external: true, icon: 'whatsapp' },
+  { label: ct.callLabel, value: site.phoneDisplay, href: site.phoneHref, external: false, icon: 'phone' },
+  { label: ct.emailLabel, value: site.email, href: `mailto:${site.email}`, external: false, icon: 'mail' },
+];
+---
+
+<!-- Editorial hero -->
+<section class="bg-ivory pt-36 pb-12 lg:pt-44 lg:pb-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="eyebrow mb-4">{ct.heroEyebrow}</p>
+    <h1>{ct.heroHeading}</h1>
+    <p class="mt-6 text-text-muted text-lg leading-relaxed">{ct.heroSub}</p>
+  </div>
+</section>
+
+<!-- Contact methods -->
+<section class="section pt-12">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="script text-gold text-4xl block">{ct.methodsHeading}</span>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      {methods.map((m) => (
+        <a href={m.href} target={m.external ? '_blank' : undefined} rel={m.external ? 'noopener noreferrer' : undefined}
+           class="group bg-card rounded-2xl p-8 text-center shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-transform">
+          <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-dusty/60 border border-rose/40 text-botanical mb-4">
+            {m.icon === 'whatsapp' && <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg>}
+            {m.icon === 'phone' && <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>}
+            {m.icon === 'mail' && <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>}
+          </span>
+          <span class="block font-serif text-xl text-botanical">{m.label}</span>
+          <span class="block text-text-muted text-sm mt-1 break-all group-hover:text-rose transition-colors">{m.value}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Details + form -->
+<section class="bg-cream section pt-0">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <!-- Find us -->
+    <div>
+      <h2>{ct.detailsHeading}</h2>
+      <Sprig class="mt-6 !justify-start" />
+      <dl class="mt-8 space-y-6 text-[15px]">
+        <div>
+          <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.addressLabel}</dt>
+          <dd class="text-text-muted leading-relaxed">{site.address.street}<br />{site.address.area}<br />{site.address.region}, {site.address.country}</dd>
+        </div>
+        <div>
+          <dt class="font-sans font-medium text-botanical uppercase tracking-wide text-xs mb-1">{ct.hoursLabel}</dt>
+          <dd class="text-text-muted">{c.shared.hoursTBC}</dd>
+        </div>
+      </dl>
+      <div class="mt-8 rounded-2xl overflow-hidden border border-border bg-white">
+        {/* {{MAP_EMBED_URL}} — replace this block with a real Google Maps embed before launch */}
+        <div class="aspect-[16/10] flex items-center justify-center bg-dusty/40 text-botanical/70 text-sm text-center px-4">
+          {c.shared.mapSoon}
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div>
+      <h2>{ct.formHeading}</h2>
+      {/* Functional mailto fallback. Recommended: swap action for a Formspree/Web3Forms endpoint before launch. */}
+      <form action={`mailto:${site.email}`} method="POST" enctype="text/plain" class="mt-8 space-y-5">
+        <div>
+          <label for="name" class="block text-sm font-medium text-botanical mb-2">{ct.form.name}</label>
+          <input id="name" name="name" type="text" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-botanical mb-2">{ct.form.email}</label>
+          <input id="email" name="email" type="email" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none" />
+        </div>
+        <div>
+          <label for="occasion" class="block text-sm font-medium text-botanical mb-2">{ct.form.occasion}</label>
+          <select id="occasion" name="occasion" class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none">
+            <option value="">{ct.form.occasionDefault}</option>
+            {occasionIds.map((id) => <option value={id}>{c.occasions[id].title}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-botanical mb-2">{ct.form.message}</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-md border border-border bg-white px-4 py-3 text-charcoal focus:border-rose outline-none resize-y"></textarea>
+        </div>
+        <button type="submit" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-rose text-white font-medium hover:bg-rose-hover transition-colors shadow-sm">
+          {ct.form.submit}
+        </button>
+      </form>
+      <p class="mt-6 text-text-muted text-sm leading-relaxed">{ct.finalNote}</p>
+    </div>
+  </div>
+</section>

@@ -1,9 +1,16 @@
 ---
 import '../styles/global.css';
+import { withBase } from '../utils/url';
+import { htmlLang, ogLocale, type Locale, type RouteKey } from '../i18n/ui';
+import { site } from '../data/site';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
   description?: string;
+  locale?: Locale;
+  routeKey?: RouteKey;
   ogImage?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
@@ -11,7 +18,9 @@ interface Props {
 
 const {
   title,
-  description = 'Your business description goes here.',
+  description = 'Bespoke flower arrangements for every occasion, hand-made on the Costa Blanca with free local delivery.',
+  locale = 'en',
+  routeKey = 'home',
   ogImage = '/images/og-default.jpg',
   type = 'website',
   noindex = false,
@@ -22,7 +31,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,8 +46,8 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:site_name" content="Your Business Name" />
-    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Blooming Marvellous" />
+    <meta property="og:locale" content={ogLocale[locale]} />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,39 +56,46 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="48x48" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} />
 
-    <!-- Fonts (preload critical, async the rest) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- JSON-LD: LocalBusiness (every page) -->
+    <!-- JSON-LD: Florist / LocalBusiness -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://example.com/#business",
-      "name": "Your Business Name",
-      "description": "Your business description",
-      "url": "https://example.com",
-      "telephone": "+441234567890",
-      "email": "hello@example.com",
+      "@type": "Florist",
+      "@id": "https://bloomingmarvellousflowers.com/#business",
+      "name": "Blooming Marvellous",
+      "description": "Bespoke flower arrangements for every occasion, hand-made on the Costa Blanca with free local delivery.",
+      "url": "https://bloomingmarvellousflowers.com",
+      "telephone": "+34618063933",
+      "email": site.email,
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Your Town",
-        "addressRegion": "County",
-        "postalCode": "Postcode",
-        "addressCountry": "GB"
+        "streetAddress": "Calle Virgen de la Asunción, Urbanización Oasis",
+        "addressLocality": "La Marina",
+        "addressRegion": "Alicante",
+        "addressCountry": "ES"
       },
-      "priceRange": "££"
+      "areaServed": "Costa Blanca South",
+      "priceRange": "€€"
     })} />
 
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-background text-foreground">
-    <slot />
+    <Navbar locale={locale} routeKey={routeKey} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={locale} routeKey={routeKey} />
   </body>
 </html>

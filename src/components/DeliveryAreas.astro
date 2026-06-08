@@ -1,0 +1,21 @@
+---
+import { deliveryAreas } from '../data/site';
+// Service-area chips — local-SEO load-bearing. Reused on Home teaser + Delivery page.
+interface Props {
+  variant?: 'chips' | 'inline';
+  class?: string;
+}
+const { variant = 'chips', class: className = '' } = Astro.props;
+---
+{variant === 'chips' ? (
+  <ul class={`flex flex-wrap gap-3 justify-center ${className}`}>
+    {deliveryAreas.map((area) => (
+      <li class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream border border-border text-sm font-medium text-botanical">
+        <span class="w-1.5 h-1.5 rounded-full bg-rose"></span>
+        {area}
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class={`text-text-muted ${className}`}>{deliveryAreas.join(' · ')}</p>
+)}

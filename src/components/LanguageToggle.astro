@@ -1,0 +1,29 @@
+---
+import { locales, localizedPath, type Locale, type RouteKey } from '../i18n/ui';
+// EN | ES | DE switcher — links to the equivalent route in each locale.
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+  variant?: 'dark' | 'light';
+  class?: string;
+}
+const { locale, routeKey, variant = 'dark', class: className = '' } = Astro.props;
+
+const base = variant === 'light' ? 'text-cream/60' : 'text-text-muted';
+const active = variant === 'light' ? 'text-cream' : 'text-rose';
+---
+<div class={`flex items-center gap-1 text-xs font-sans font-medium uppercase tracking-wider ${className}`}>
+  {locales.map((l, i) => (
+    <>
+      {i > 0 && <span class={base}>·</span>}
+      <a
+        href={localizedPath(routeKey, l)}
+        hreflang={l}
+        aria-current={l === locale ? 'true' : undefined}
+        class={`px-1 transition-colors hover:opacity-80 ${l === locale ? active : base}`}
+      >
+        {l}
+      </a>
+    </>
+  ))}
+</div>

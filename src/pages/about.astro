@@ -1,17 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import { AboutPage } from '../components/pages/AboutPage';
-import { getEntry, render } from 'astro:content';
-
-const page = await getEntry('pages', 'about');
-const d = page.data;
-const { Content } = await render(page);
+import AboutBody from '../components/bodies/AboutBody.astro';
+import { useContent } from '../i18n/content';
+const locale = 'en' as const;
+const meta = useContent(locale).meta.about;
 ---
-
-<Base title={d.seo_title ?? d.title} description={d.seo_description}>
-  <AboutPage
-    client:load
-    heroHeading={d.hero_heading}
-    heroSubheading={d.hero_subheading}
-  />
+<Base title={meta.title} description={meta.description} locale={locale} routeKey="about">
+  <AboutBody locale={locale} />
 </Base>

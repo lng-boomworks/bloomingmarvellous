@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import DeliveryBody from '../../components/bodies/DeliveryBody.astro';
+import { useContent } from '../../i18n/content';
+const locale = 'de' as const;
+const meta = useContent(locale).meta.delivery;
+---
+<Base title={meta.title} description={meta.description} locale={locale} routeKey="delivery">
+  <DeliveryBody locale={locale} />
+</Base>

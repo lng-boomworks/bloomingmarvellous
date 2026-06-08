@@ -1,0 +1,81 @@
+---
+import { navOrder, navLabels, localizedPath, type Locale, type RouteKey } from '../i18n/ui';
+import { useContent } from '../i18n/content';
+import { site } from '../data/site';
+import LogoLockup from './LogoLockup.astro';
+import LanguageToggle from './LanguageToggle.astro';
+
+interface Props {
+  locale: Locale;
+  routeKey: RouteKey;
+}
+const { locale, routeKey } = Astro.props;
+const c = useContent(locale);
+const f = c.footer;
+const labels = navLabels[locale];
+const year = new Date().getFullYear();
+
+// Only render socials with a real URL (drops any unresolved {{TOKEN}} like Pinterest).
+const socials = [
+  { name: 'Instagram', href: site.social.instagram },
+  { name: 'Facebook', href: site.social.facebook },
+  { name: 'Pinterest', href: site.social.pinterest },
+].filter((s) => !s.href.startsWith('{{'));
+---
+<footer class="bg-botanical text-cream/75">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <LogoLockup variant="light" size="sm" />
+        <p class="text-[15px] leading-relaxed mt-6 max-w-sm text-cream/70">{f.tagline}</p>
+        <div class="flex items-center gap-4 mt-6">
+          {socials.map((s) => (
+            <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name}
+               class="flex items-center justify-center w-10 h-10 rounded-full border border-cream/25 text-cream/80 hover:bg-rose hover:border-rose hover:text-white transition-colors">
+              {s.name === 'Instagram' && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              )}
+              {s.name === 'Facebook' && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v7h3v-7H16l.5-3h-3V9.5c0-.3.2-.5.5-.5z"/></svg>
+              )}
+              {s.name === 'Pinterest' && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3-2.3 3-5 0-2-1.4-3.6-4-3.6a4.6 4.6 0 0 0-4.8 4.6c0 .9.3 1.5.7 2 .2.2.2.3.1.5l-.2.9c-.1.3-.3.4-.6.2-1.2-.5-1.8-1.9-1.8-3.5C5.9 7.7 8 5 12.2 5c3.4 0 5.7 2.4 5.7 5.1 0 3.5-2 6.1-4.8 6.1-1 0-1.9-.5-2.2-1.1l-.6 2.3c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2z"/></svg>
+              )}
+            </a>
+          ))}
+        </div>
+        <p class="text-cream/50 text-xs mt-4">{site.social.handle}</p>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <h4 class="text-cream font-sans font-medium mb-5 text-sm tracking-wide uppercase">{f.navHeading}</h4>
+        <ul class="flex flex-col gap-3 text-[15px]">
+          {navOrder.map((key) => (
+            <li><a href={localizedPath(key, locale)} class="hover:text-cream transition-colors">{labels[key]}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-cream font-sans font-medium mb-5 text-sm tracking-wide uppercase">{f.contactHeading}</h4>
+        <ul class="flex flex-col gap-3 text-[15px]">
+          <li><a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" class="hover:text-cream transition-colors">WhatsApp: {site.whatsappDisplay}</a></li>
+          <li><a href={site.phoneHref} class="hover:text-cream transition-colors">{site.phoneDisplay}</a></li>
+          <li><a href={`mailto:${site.email}`} class="hover:text-cream transition-colors break-all">{site.email}</a></li>
+          <li class="text-cream/60 pt-1">{site.address.street}, {site.address.area}, {site.address.region}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-cream/15 flex flex-col md:flex-row justify-between items-center gap-5">
+      <p class="text-sm text-cream/60">&copy; {year} {site.brand}. {f.rights}</p>
+      <div class="flex items-center gap-3">
+        <span class="text-cream/50 text-xs uppercase tracking-wider">{f.langHeading}:</span>
+        <LanguageToggle locale={locale} routeKey={routeKey} variant="light" />
+      </div>
+    </div>
+  </div>
+</footer>

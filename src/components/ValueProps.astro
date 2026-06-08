@@ -1,0 +1,46 @@
+---
+import { useContent } from '../i18n/content';
+import type { Locale } from '../i18n/ui';
+// The four poster value props in a row of circular blush icon badges.
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useContent(locale).home.valueProps;
+
+const items = [
+  { key: 'fresh', title: t.fresh.title },
+  { key: 'personal', title: t.personal.title },
+  { key: 'delivery', title: t.delivery.title },
+  { key: 'occasion', title: t.occasion.title },
+];
+---
+<ul class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+  {items.map((item) => (
+    <li class="flex flex-col items-center text-center gap-3">
+      <span class="flex items-center justify-center w-16 h-16 rounded-full bg-dusty/60 border border-rose/40 text-botanical">
+        {item.key === 'fresh' && (
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 13v8" /><path d="M12 13c-2.5 0-4-1.8-4-4 2.5 0 4 1.8 4 4z" /><path d="M12 13c2.5 0 4-1.8 4-4-2.5 0-4 1.8-4 4z" /><path d="M12 9c0-2.2 1.5-4 3.5-4 0 2.2-1.5 4-3.5 4z" /><path d="M12 9c0-2.2-1.5-4-3.5-4 0 2.2 1.5 4 3.5 4z" /><path d="M8 21h8" />
+          </svg>
+        )}
+        {item.key === 'personal' && (
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.5 12 20 12 20z" />
+          </svg>
+        )}
+        {item.key === 'delivery' && (
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7h11v8H3z" /><path d="M14 9h4l3 3v3h-7z" /><circle cx="7" cy="17" r="1.6" /><circle cx="17" cy="17" r="1.6" />
+          </svg>
+        )}
+        {item.key === 'occasion' && (
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 9h16v11H4z" /><path d="M4 9l1.5-4h13L20 9" /><path d="M12 5v15" />
+          </svg>
+        )}
+      </span>
+      <span class="font-sans text-sm font-medium text-botanical leading-snug max-w-[140px]">{item.title}</span>
+    </li>
+  ))}
+</ul>
