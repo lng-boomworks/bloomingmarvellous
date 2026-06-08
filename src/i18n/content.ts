@@ -9,7 +9,7 @@ const en = {
     home: {
       title: 'Blooming Marvellous | Florist in La Marina, Costa Blanca',
       description:
-        'Bespoke flower arrangements for every occasion, hand-made by Lorena with free local delivery across La Marina and the Costa Blanca South.',
+        'Bespoke flower arrangements for every occasion, hand-made by Lorena with free delivery in La Marina and low-cost delivery across the Costa Blanca South.',
     },
     flowers: {
       title: 'Our Flowers | Blooming Marvellous',
@@ -22,9 +22,9 @@ const en = {
         'Meet Lorena, the florist behind Blooming Marvellous - a local boutique florist on the Costa Blanca with a personal touch in every arrangement.',
     },
     delivery: {
-      title: 'Free Local Delivery | Blooming Marvellous',
+      title: 'Flower Delivery in La Marina | Blooming Marvellous',
       description:
-        'Free flower delivery across La Marina, San Fulgencio, Guardamar, Torrevieja and the Costa Blanca South. Same-day delivery for local orders.',
+        'Free flower delivery in La Marina, with low-cost delivery to San Fulgencio, Guardamar, Torrevieja and across the Costa Blanca South. Same-day delivery for local orders.',
     },
     contact: {
       title: 'Contact | Blooming Marvellous',
@@ -39,7 +39,7 @@ const en = {
     call: 'Call us',
     email: 'Email us',
     contactUs: 'Contact us',
-    freeDeliveryShort: 'Free local delivery',
+    freeDeliveryShort: 'Free delivery in La Marina',
     hoursTBC: 'Please get in touch for our latest opening hours.',
     mapSoon: 'Find us in Urbanización Oasis, La Marina - map coming soon.',
     hours: [
@@ -63,7 +63,7 @@ const en = {
     heroLine2: 'Made for moments',
     heroLine3Script: 'that matter.',
     heroSub:
-      'Bespoke arrangements made by hand with a personal touch, and delivered free across La Marina and the Costa Blanca South.',
+      'Bespoke arrangements made by hand with a personal touch, delivered free in La Marina and across the Costa Blanca South for a small charge.',
     valueProps: {
       fresh: { title: 'Fresh & Seasonal Flowers' },
       personal: { title: 'Personalised Service' },
@@ -80,10 +80,10 @@ const en = {
     featuredHeading: 'The care is in the detail',
     featuredBody:
       'Tell us the occasion, the colours, the feeling - and Lorena will design something truly personal. From a single thoughtful bouquet to a tribute in someone’s favourite team colours, no request is too small or too special.',
-    deliveryEyebrow: 'Free local delivery',
-    deliveryHeading: 'Delivered free, right to the door',
+    deliveryEyebrow: 'Local delivery',
+    deliveryHeading: 'Free in La Marina, right to the door',
     deliveryBody:
-      'We deliver free across La Marina and the surrounding Costa Blanca South, with same-day delivery available for local orders.',
+      'We deliver free in La Marina, with a small delivery charge for the surrounding Costa Blanca South - and same-day delivery available for local orders.',
     orderEaseScript: 'Order with ease',
     orderEaseLine: 'Online & by phone',
     testimonialsEyebrow: 'Loved locally',
@@ -124,7 +124,7 @@ const en = {
       bespoke: { title: 'Bespoke', desc: 'Designed by hand for you - never off-the-shelf.' },
       fresh: { title: 'Fresh & Seasonal', desc: 'Beautiful blooms, chosen fresh for every order.' },
       personal: { title: 'Personal', desc: 'A real local florist who listens and cares.' },
-      local: { title: 'Free Local Delivery', desc: 'Delivered free across the Costa Blanca South.' },
+      local: { title: 'Free in La Marina', desc: 'Free delivery in La Marina, a small charge for surrounding areas.' },
     },
     bannerCaption: 'Hand-made on the Costa Blanca, with love.',
     testimonialsHeading: 'Kind words from our customers',
@@ -134,22 +134,22 @@ const en = {
 
   delivery: {
     heroEyebrow: 'Delivery',
-    heroHeading: 'Free local delivery, made personal',
+    heroHeading: 'Free in La Marina, made personal',
     heroSub:
-      'We deliver beautiful flowers free across La Marina and the Costa Blanca South - with same-day delivery for local orders.',
+      'We deliver beautiful flowers free in La Marina, with a small delivery charge across the rest of the Costa Blanca South - and same-day delivery for local orders.',
     stepsHeading: 'How to order',
     steps: {
       one: { title: 'Choose your occasion', desc: 'Browse our flowers or simply tell us what it’s for.' },
       two: { title: 'Message or call', desc: 'Get in touch on WhatsApp or by phone with your idea, colours and budget.' },
       three: { title: 'We hand-make it', desc: 'Lorena designs your arrangement with fresh, seasonal flowers.' },
-      four: { title: 'Free local delivery', desc: 'We deliver it free, straight to the door - same day for local orders.' },
+      four: { title: 'Delivery to your door', desc: 'Free in La Marina, a small charge for surrounding areas - same day for local orders.' },
     },
     areasHeading: 'Where we deliver',
-    areasSub: 'Free delivery across the Costa Blanca South, including:',
+    areasSub: 'Free in La Marina, with a small delivery charge across the surrounding Costa Blanca South, including:',
     areasNote: 'Not sure if we reach you? Just ask - we’re always happy to help.',
     hoursHeading: 'Opening hours',
     finalHeading: 'Ready to order?',
-    finalSub: 'Message us on WhatsApp or give us a call - free local delivery across the Costa Blanca South.',
+    finalSub: 'Message us on WhatsApp or give us a call - free delivery in La Marina, a small charge for surrounding areas.',
   },
 
   contact: {
@@ -176,7 +176,7 @@ const en = {
   },
 
   footer: {
-    tagline: 'Bespoke flowers for the moments that matter - hand-made on the Costa Blanca, delivered free locally.',
+    tagline: 'Bespoke flowers for the moments that matter - hand-made on the Costa Blanca, with free delivery in La Marina.',
     navHeading: 'Explore',
     contactHeading: 'Get in touch',
     followHeading: 'Follow us',
@@ -190,7 +190,7 @@ const es: typeof en = {
     home: {
       title: 'Blooming Marvellous | Floristería en La Marina, Costa Blanca',
       description:
-        'Arreglos florales a medida para cada ocasión, hechos a mano por Lorena con entrega local gratuita en La Marina y la Costa Blanca Sur.',
+        'Arreglos florales a medida para cada ocasión, hechos a mano por Lorena con entrega gratuita en La Marina y envío a bajo coste por la Costa Blanca Sur.',
     },
     flowers: {
       title: 'Nuestras Flores | Blooming Marvellous',
@@ -203,9 +203,9 @@ const es: typeof en = {
         'Conoce a Lorena, la florista de Blooming Marvellous - una floristería boutique local en la Costa Blanca con un toque personal en cada arreglo.',
     },
     delivery: {
-      title: 'Entrega Local Gratuita | Blooming Marvellous',
+      title: 'Entrega de Flores en La Marina | Blooming Marvellous',
       description:
-        'Entrega de flores gratuita en La Marina, San Fulgencio, Guardamar, Torrevieja y la Costa Blanca Sur. Entrega el mismo día en pedidos locales.',
+        'Entrega de flores gratuita en La Marina, con envío a bajo coste a San Fulgencio, Guardamar, Torrevieja y toda la Costa Blanca Sur. Entrega el mismo día en pedidos locales.',
     },
     contact: {
       title: 'Contacto | Blooming Marvellous',
@@ -220,7 +220,7 @@ const es: typeof en = {
     call: 'Llámanos',
     email: 'Escríbenos',
     contactUs: 'Contáctanos',
-    freeDeliveryShort: 'Entrega local gratuita',
+    freeDeliveryShort: 'Entrega gratuita en La Marina',
     hoursTBC: 'Contáctanos para conocer nuestro horario actual.',
     mapSoon: 'Encuéntranos en Urbanización Oasis, La Marina - mapa próximamente.',
     hours: [
@@ -244,7 +244,7 @@ const es: typeof en = {
     heroLine2: 'Para los momentos',
     heroLine3Script: 'que importan.',
     heroSub:
-      'Arreglos a medida hechos a mano con un toque personal, y entregados gratis en La Marina y la Costa Blanca Sur.',
+      'Arreglos a medida hechos a mano con un toque personal, entregados gratis en La Marina y por la Costa Blanca Sur con un pequeño cargo.',
     valueProps: {
       fresh: { title: 'Flores Frescas y de Temporada' },
       personal: { title: 'Servicio Personalizado' },
@@ -261,10 +261,10 @@ const es: typeof en = {
     featuredHeading: 'El cuidado está en el detalle',
     featuredBody:
       'Cuéntanos la ocasión, los colores, la emoción - y Lorena diseñará algo verdaderamente personal. Desde un ramo cuidado hasta un homenaje en los colores de un equipo favorito, ninguna petición es demasiado pequeña ni demasiado especial.',
-    deliveryEyebrow: 'Entrega local gratuita',
-    deliveryHeading: 'Entregado gratis, hasta tu puerta',
+    deliveryEyebrow: 'Entrega local',
+    deliveryHeading: 'Gratis en La Marina, hasta tu puerta',
     deliveryBody:
-      'Entregamos gratis en La Marina y toda la Costa Blanca Sur, con entrega el mismo día disponible para pedidos locales.',
+      'Entregamos gratis en La Marina, con un pequeño cargo de envío para el resto de la Costa Blanca Sur - y entrega el mismo día disponible para pedidos locales.',
     orderEaseScript: 'Pide con facilidad',
     orderEaseLine: 'Online y por teléfono',
     testimonialsEyebrow: 'Queridos en la zona',
@@ -305,7 +305,7 @@ const es: typeof en = {
       bespoke: { title: 'A Medida', desc: 'Diseñado a mano para ti - nunca prefabricado.' },
       fresh: { title: 'Fresco y de Temporada', desc: 'Flores preciosas, elegidas frescas para cada pedido.' },
       personal: { title: 'Personal', desc: 'Una floristería local de verdad que escucha y se preocupa.' },
-      local: { title: 'Entrega Local Gratuita', desc: 'Entregado gratis por toda la Costa Blanca Sur.' },
+      local: { title: 'Gratis en La Marina', desc: 'Entrega gratuita en La Marina, un pequeño cargo para las zonas cercanas.' },
     },
     bannerCaption: 'Hecho a mano en la Costa Blanca, con cariño.',
     testimonialsHeading: 'Palabras de nuestros clientes',
@@ -315,22 +315,22 @@ const es: typeof en = {
 
   delivery: {
     heroEyebrow: 'Entrega',
-    heroHeading: 'Entrega local gratuita, con un toque personal',
+    heroHeading: 'Gratis en La Marina, con un toque personal',
     heroSub:
-      'Entregamos flores preciosas gratis en La Marina y la Costa Blanca Sur - con entrega el mismo día para pedidos locales.',
+      'Entregamos flores preciosas gratis en La Marina, con un pequeño cargo de envío por el resto de la Costa Blanca Sur - y entrega el mismo día para pedidos locales.',
     stepsHeading: 'Cómo pedir',
     steps: {
       one: { title: 'Elige tu ocasión', desc: 'Mira nuestras flores o simplemente dinos para qué es.' },
       two: { title: 'Escribe o llama', desc: 'Contáctanos por WhatsApp o teléfono con tu idea, colores y presupuesto.' },
       three: { title: 'Lo hacemos a mano', desc: 'Lorena diseña tu arreglo con flores frescas y de temporada.' },
-      four: { title: 'Entrega local gratuita', desc: 'Lo entregamos gratis, hasta tu puerta - el mismo día en pedidos locales.' },
+      four: { title: 'Entrega a tu puerta', desc: 'Gratis en La Marina, un pequeño cargo para las zonas cercanas - el mismo día en pedidos locales.' },
     },
     areasHeading: 'Dónde entregamos',
-    areasSub: 'Entrega gratuita por toda la Costa Blanca Sur, incluyendo:',
+    areasSub: 'Gratis en La Marina, con un pequeño cargo de envío por el resto de la Costa Blanca Sur, incluyendo:',
     areasNote: '¿No sabes si llegamos hasta ti? Solo pregúntanos - estaremos encantados de ayudar.',
     hoursHeading: 'Horario',
     finalHeading: '¿Listo para pedir?',
-    finalSub: 'Escríbenos por WhatsApp o llámanos - entrega local gratuita por toda la Costa Blanca Sur.',
+    finalSub: 'Escríbenos por WhatsApp o llámanos - entrega gratuita en La Marina, un pequeño cargo para las zonas cercanas.',
   },
 
   contact: {
@@ -357,7 +357,7 @@ const es: typeof en = {
   },
 
   footer: {
-    tagline: 'Flores a medida para los momentos que importan - hechas a mano en la Costa Blanca, con entrega local gratuita.',
+    tagline: 'Flores a medida para los momentos que importan - hechas a mano en la Costa Blanca, con entrega gratuita en La Marina.',
     navHeading: 'Explora',
     contactHeading: 'Contacto',
     followHeading: 'Síguenos',
@@ -371,7 +371,7 @@ const de: typeof en = {
     home: {
       title: 'Blooming Marvellous | Blumengeschäft in La Marina, Costa Blanca',
       description:
-        'Maßgeschneiderte Blumengestecke für jeden Anlass, von Hand gefertigt von Lorena, mit kostenloser lokaler Lieferung in La Marina und an der Costa Blanca Süd.',
+        'Maßgeschneiderte Blumengestecke für jeden Anlass, von Hand gefertigt von Lorena, mit kostenloser Lieferung in La Marina und günstiger Lieferung an der Costa Blanca Süd.',
     },
     flowers: {
       title: 'Unsere Blumen | Blooming Marvellous',
@@ -384,9 +384,9 @@ const de: typeof en = {
         'Lernen Sie Lorena kennen, die Floristin hinter Blooming Marvellous - ein lokales Boutique-Blumengeschäft an der Costa Blanca mit persönlicher Note in jedem Gesteck.',
     },
     delivery: {
-      title: 'Kostenlose Lokale Lieferung | Blooming Marvellous',
+      title: 'Blumenlieferung in La Marina | Blooming Marvellous',
       description:
-        'Kostenlose Blumenlieferung in La Marina, San Fulgencio, Guardamar, Torrevieja und an der Costa Blanca Süd. Lieferung am selben Tag bei lokalen Bestellungen.',
+        'Kostenlose Blumenlieferung in La Marina, mit günstiger Lieferung nach San Fulgencio, Guardamar, Torrevieja und an die gesamte Costa Blanca Süd. Lieferung am selben Tag bei lokalen Bestellungen.',
     },
     contact: {
       title: 'Kontakt | Blooming Marvellous',
@@ -401,7 +401,7 @@ const de: typeof en = {
     call: 'Anrufen',
     email: 'E-Mail schreiben',
     contactUs: 'Kontakt aufnehmen',
-    freeDeliveryShort: 'Kostenlose lokale Lieferung',
+    freeDeliveryShort: 'Kostenlose Lieferung in La Marina',
     hoursTBC: 'Bitte kontaktieren Sie uns für unsere aktuellen Öffnungszeiten.',
     mapSoon: 'Sie finden uns in der Urbanización Oasis, La Marina - Karte folgt in Kürze.',
     hours: [
@@ -425,7 +425,7 @@ const de: typeof en = {
     heroLine2: 'Für Momente,',
     heroLine3Script: 'die zählen.',
     heroSub:
-      'Maßgeschneiderte Gestecke, von Hand gefertigt mit persönlicher Note und kostenlos geliefert in La Marina und an der Costa Blanca Süd.',
+      'Maßgeschneiderte Gestecke, von Hand gefertigt mit persönlicher Note, kostenlos geliefert in La Marina und gegen eine kleine Gebühr an der Costa Blanca Süd.',
     valueProps: {
       fresh: { title: 'Frische & Saisonale Blumen' },
       personal: { title: 'Persönlicher Service' },
@@ -442,10 +442,10 @@ const de: typeof en = {
     featuredHeading: 'Die Sorgfalt steckt im Detail',
     featuredBody:
       'Sagen Sie uns den Anlass, die Farben, das Gefühl - und Lorena gestaltet etwas wirklich Persönliches. Von einem durchdachten Strauß bis zu einem Gedenkgesteck in den Farben des Lieblingsvereins: kein Wunsch ist zu klein oder zu besonders.',
-    deliveryEyebrow: 'Kostenlose lokale Lieferung',
-    deliveryHeading: 'Kostenlos geliefert, direkt vor die Tür',
+    deliveryEyebrow: 'Lokale Lieferung',
+    deliveryHeading: 'Kostenlos in La Marina, direkt vor die Tür',
     deliveryBody:
-      'Wir liefern kostenlos in La Marina und der umliegenden Costa Blanca Süd, mit Lieferung am selben Tag bei lokalen Bestellungen.',
+      'Wir liefern kostenlos in La Marina, mit einer kleinen Liefergebühr für die umliegende Costa Blanca Süd - und Lieferung am selben Tag bei lokalen Bestellungen.',
     orderEaseScript: 'Bestellen leicht gemacht',
     orderEaseLine: 'Online & telefonisch',
     testimonialsEyebrow: 'Lokal beliebt',
@@ -486,7 +486,7 @@ const de: typeof en = {
       bespoke: { title: 'Maßgeschneidert', desc: 'Von Hand für Sie gestaltet - nie von der Stange.' },
       fresh: { title: 'Frisch & Saisonal', desc: 'Wunderschöne Blüten, frisch für jede Bestellung ausgewählt.' },
       personal: { title: 'Persönlich', desc: 'Ein echtes lokales Blumengeschäft, das zuhört und sich kümmert.' },
-      local: { title: 'Kostenlose Lokale Lieferung', desc: 'Kostenlos geliefert in der gesamten Costa Blanca Süd.' },
+      local: { title: 'Kostenlos in La Marina', desc: 'Kostenlose Lieferung in La Marina, eine kleine Gebühr für umliegende Gebiete.' },
     },
     bannerCaption: 'Von Hand gefertigt an der Costa Blanca, mit Liebe.',
     testimonialsHeading: 'Liebe Worte unserer Kunden',
@@ -496,22 +496,22 @@ const de: typeof en = {
 
   delivery: {
     heroEyebrow: 'Lieferung',
-    heroHeading: 'Kostenlose lokale Lieferung, mit persönlicher Note',
+    heroHeading: 'Kostenlos in La Marina, mit persönlicher Note',
     heroSub:
-      'Wir liefern wunderschöne Blumen kostenlos in La Marina und an der Costa Blanca Süd - mit Lieferung am selben Tag bei lokalen Bestellungen.',
+      'Wir liefern wunderschöne Blumen kostenlos in La Marina, mit einer kleinen Liefergebühr für die übrige Costa Blanca Süd - und Lieferung am selben Tag bei lokalen Bestellungen.',
     stepsHeading: 'So bestellen Sie',
     steps: {
       one: { title: 'Wählen Sie Ihren Anlass', desc: 'Stöbern Sie in unseren Blumen oder sagen Sie uns einfach, wofür sie sind.' },
       two: { title: 'Schreiben oder anrufen', desc: 'Kontaktieren Sie uns per WhatsApp oder Telefon mit Ihrer Idee, Farben und Budget.' },
       three: { title: 'Wir fertigen von Hand', desc: 'Lorena gestaltet Ihr Gesteck mit frischen, saisonalen Blumen.' },
-      four: { title: 'Kostenlose lokale Lieferung', desc: 'Wir liefern kostenlos, direkt vor die Tür - am selben Tag bei lokalen Bestellungen.' },
+      four: { title: 'Lieferung vor die Tür', desc: 'Kostenlos in La Marina, eine kleine Gebühr für umliegende Gebiete - am selben Tag bei lokalen Bestellungen.' },
     },
     areasHeading: 'Wohin wir liefern',
-    areasSub: 'Kostenlose Lieferung in der gesamten Costa Blanca Süd, darunter:',
+    areasSub: 'Kostenlos in La Marina, mit einer kleinen Liefergebühr für die übrige Costa Blanca Süd, darunter:',
     areasNote: 'Nicht sicher, ob wir Sie erreichen? Fragen Sie einfach - wir helfen gerne.',
     hoursHeading: 'Öffnungszeiten',
     finalHeading: 'Bereit zu bestellen?',
-    finalSub: 'Schreiben Sie uns per WhatsApp oder rufen Sie an - kostenlose lokale Lieferung in der gesamten Costa Blanca Süd.',
+    finalSub: 'Schreiben Sie uns per WhatsApp oder rufen Sie an - kostenlose Lieferung in La Marina, eine kleine Gebühr für umliegende Gebiete.',
   },
 
   contact: {
@@ -538,7 +538,7 @@ const de: typeof en = {
   },
 
   footer: {
-    tagline: 'Maßgeschneiderte Blumen für die Momente, die zählen - von Hand gefertigt an der Costa Blanca, kostenlos lokal geliefert.',
+    tagline: 'Maßgeschneiderte Blumen für die Momente, die zählen - von Hand gefertigt an der Costa Blanca, mit kostenloser Lieferung in La Marina.',
     navHeading: 'Entdecken',
     contactHeading: 'Kontakt',
     followHeading: 'Folgen Sie uns',

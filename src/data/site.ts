@@ -34,7 +34,7 @@ export const site = {
   },
 } as const;
 
-// Free local delivery area (Costa Blanca South). Names are proper nouns - shared across locales.
+// Delivery coverage area (Costa Blanca South). Free in La Marina, small charge for other areas. Names are proper nouns - shared across locales.
 export const deliveryAreas = [
   'La Marina',
   'San Fulgencio',
