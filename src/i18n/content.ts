@@ -47,6 +47,11 @@ const en = {
       { days: 'Tuesday, Thursday & Saturday', time: '10:00 - 13:00' },
       { days: 'Sunday', time: 'Closed' },
     ],
+    hoursShort: [
+      { days: 'Mon, Wed & Fri', time: '10:00 - 16:00' },
+      { days: 'Tue, Thu & Sat', time: '10:00 - 13:00' },
+      { days: 'Sun', time: 'Closed' },
+    ],
   },
 
   occasions: {
@@ -148,6 +153,7 @@ const en = {
     areasSub: 'Free in La Marina, with a small delivery charge across the surrounding Costa Blanca South, including:',
     areasNote: 'Not sure if we reach you? Just ask - we’re always happy to help.',
     hoursHeading: 'Opening hours',
+    hoursNote: 'Please note we are also closed on Spanish public holidays (red days), so do plan any deliveries around these dates.',
     finalHeading: 'Ready to order?',
     finalSub: 'Message us on WhatsApp or give us a call - free delivery in La Marina, a small charge for surrounding areas.',
   },
@@ -179,6 +185,7 @@ const en = {
     tagline: 'Bespoke flowers for the moments that matter - hand-made on the Costa Blanca, with free delivery in La Marina.',
     navHeading: 'Explore',
     contactHeading: 'Get in touch',
+    hoursHeading: 'Opening hours',
     followHeading: 'Follow us',
     rights: 'All rights reserved.',
     langHeading: 'Language',
@@ -227,6 +234,11 @@ const es: typeof en = {
       { days: 'Lunes, miércoles y viernes', time: '10:00 - 16:00' },
       { days: 'Martes, jueves y sábado', time: '10:00 - 13:00' },
       { days: 'Domingo', time: 'Cerrado' },
+    ],
+    hoursShort: [
+      { days: 'Lun, mié y vie', time: '10:00 - 16:00' },
+      { days: 'Mar, jue y sáb', time: '10:00 - 13:00' },
+      { days: 'Dom', time: 'Cerrado' },
     ],
   },
 
@@ -329,6 +341,7 @@ const es: typeof en = {
     areasSub: 'Gratis en La Marina, con un pequeño cargo de envío por el resto de la Costa Blanca Sur, incluyendo:',
     areasNote: '¿No sabes si llegamos hasta ti? Solo pregúntanos - estaremos encantados de ayudar.',
     hoursHeading: 'Horario',
+    hoursNote: 'Ten en cuenta que también cerramos los días festivos en España (días rojos), así que planifica tus envíos teniendo en cuenta estas fechas.',
     finalHeading: '¿Listo para pedir?',
     finalSub: 'Escríbenos por WhatsApp o llámanos - entrega gratuita en La Marina, un pequeño cargo para las zonas cercanas.',
   },
@@ -360,6 +373,7 @@ const es: typeof en = {
     tagline: 'Flores a medida para los momentos que importan - hechas a mano en la Costa Blanca, con entrega gratuita en La Marina.',
     navHeading: 'Explora',
     contactHeading: 'Contacto',
+    hoursHeading: 'Horario',
     followHeading: 'Síguenos',
     rights: 'Todos los derechos reservados.',
     langHeading: 'Idioma',
@@ -408,6 +422,11 @@ const de: typeof en = {
       { days: 'Montag, Mittwoch & Freitag', time: '10:00 - 16:00' },
       { days: 'Dienstag, Donnerstag & Samstag', time: '10:00 - 13:00' },
       { days: 'Sonntag', time: 'Geschlossen' },
+    ],
+    hoursShort: [
+      { days: 'Mo, Mi & Fr', time: '10:00 - 16:00' },
+      { days: 'Di, Do & Sa', time: '10:00 - 13:00' },
+      { days: 'So', time: 'Geschlossen' },
     ],
   },
 
@@ -510,6 +529,7 @@ const de: typeof en = {
     areasSub: 'Kostenlos in La Marina, mit einer kleinen Liefergebühr für die übrige Costa Blanca Süd, darunter:',
     areasNote: 'Nicht sicher, ob wir Sie erreichen? Fragen Sie einfach - wir helfen gerne.',
     hoursHeading: 'Öffnungszeiten',
+    hoursNote: 'Bitte beachten Sie, dass wir auch an spanischen Feiertagen (roten Tagen) geschlossen sind. Planen Sie Ihre Lieferungen daher bitte um diese Termine herum.',
     finalHeading: 'Bereit zu bestellen?',
     finalSub: 'Schreiben Sie uns per WhatsApp oder rufen Sie an - kostenlose Lieferung in La Marina, eine kleine Gebühr für umliegende Gebiete.',
   },
@@ -541,6 +561,7 @@ const de: typeof en = {
     tagline: 'Maßgeschneiderte Blumen für die Momente, die zählen - von Hand gefertigt an der Costa Blanca, mit kostenloser Lieferung in La Marina.',
     navHeading: 'Entdecken',
     contactHeading: 'Kontakt',
+    hoursHeading: 'Öffnungszeiten',
     followHeading: 'Folgen Sie uns',
     rights: 'Alle Rechte vorbehalten.',
     langHeading: 'Sprache',

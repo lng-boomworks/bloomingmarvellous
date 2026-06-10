@@ -23,7 +23,7 @@ const socials = [
 ---
 <footer class="bg-botanical text-cream/75">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
       <!-- Brand -->
       <div class="lg:col-span-2 flex flex-col items-center text-center">
         <LogoLockup variant="light" size="sm" />
@@ -64,6 +64,19 @@ const socials = [
           <li><a href={site.phoneHref} class="hover:text-cream transition-colors">{site.phoneDisplay}</a></li>
           <li><a href={`mailto:${site.email}`} class="hover:text-cream transition-colors break-all">{site.email}</a></li>
           <li class="text-cream/60 pt-1">{site.address.street}, {site.address.area}, {site.address.region}</li>
+        </ul>
+      </div>
+
+      <!-- Opening hours -->
+      <div>
+        <h4 class="text-cream font-sans font-medium mb-5 text-sm tracking-wide uppercase">{f.hoursHeading}</h4>
+        <ul class="flex flex-col gap-3 text-[15px]">
+          {c.shared.hoursShort.map((row) => (
+            <li class="flex justify-between gap-4">
+              <span>{row.days}</span>
+              <span class="text-cream/60 whitespace-nowrap">{row.time}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
